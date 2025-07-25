@@ -1,10 +1,13 @@
-from flask import Flask, jsonify
-
+from flask import Flask
 app = Flask(__name__)
 
 @app.route('/')
 def home():
-    return jsonify({'message': 'Hello from Flask on Vercel!'})
+    return 'Hello, World! Welcome to my Flask app on Vercel!'
 
-# Vercel expects this to be called "app"
-handler = app
+@app.route('/about')
+def about():
+    return 'This is the About page of the Flask app.'
+
+if __name__ == '__main__':
+    app.run()
